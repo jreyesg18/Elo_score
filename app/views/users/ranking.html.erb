@@ -1,4 +1,7 @@
-<h2>Puntajes de los Usuarios:</h2>
-<% @users.each do |user| %>
-  <p><%= user.username %>: <%= user.elo_ranking %></p>
-<% end %>
+
+<div class="col-md-3 "%>
+    <h2>Puntajes de los Usuarios:</h2>
+    <% @users.each do |user| %>
+      <p><%= user.username %>: <%= user.elo_ranking %></p>
+    <% end %>
+</div>

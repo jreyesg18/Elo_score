@@ -26,9 +26,8 @@ class UsersController < ApplicationController
     @users = User.order(elo_ranking: :desc)
   end
 
-
   private
   def user_params
-    params.require(:user).permit(:name, :lastname, :username, :elo_rating)
+    params.require(:user).permit(:name, :lastname, :username, :elo_rating, :image, :image_cache)
   end
 end

@@ -9,6 +9,11 @@
     <%= f.input :name, label: "Nombre " %>
     <%= f.input :lastname, label: "Apellido" %>
 
+    <%= f.label :image %>
+    <%= f.file_field :image,  class:"form-control" %>
+    <%= f.hidden_field :image_cache %>
+
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,

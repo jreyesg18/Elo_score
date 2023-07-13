@@ -15,6 +15,13 @@ gem 'jquery-rails'
 gem 'devise', '~> 4.2'
 
 gem 'elo', '~> 0.1.0'
+
+#manejo imagenes
+gem 'carrierwave', '~> 2.0.0'
+
+#mini
+gem "mini_magick"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
