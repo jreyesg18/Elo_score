@@ -1,0 +1,7 @@
+<% if @user1 && @user2 %>
+  <h2>Elije un usuairo:</h2>
+  <%= link_to @user1.username, choose_winner_user_path(@user1, other_id: @user2), method: :patch %>
+  <%= link_to @user2.username, choose_winner_user_path(@user2, other_id: @user1), method: :patch %>
+<% else %>
+  <p>No hay usuario disponibles en este momento.</p>
+<% end %>

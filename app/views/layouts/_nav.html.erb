@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <div class="navbar-header">
+      <%= link_to "Proyecto", root_path, class: "navbar-brand" %>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if user_signed_in? %>
+        <li><%= link_to "Salir", destroy_user_session_path, method: :delete%></li>
+      <% else%>
+        <li><%= link_to "Ranking", ranking_users_path(current_user)%></li>
+        <li><%= link_to "iniciar sesion", new_user_session_path %></li>
+        <li> <%= link_to "Registrar", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>
