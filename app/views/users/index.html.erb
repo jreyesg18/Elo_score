@@ -1,14 +1,43 @@
 
+<% if user_signed_in? %>
 
-    <% if @user1 && @user2 %>
+  <% if @user1 && @user2 %>
+    <div class="text-center">
       <h2>How is better?</h2>
+    </div>
 
-      <div class = "imagen_index"><%= link_to image_tag(@user1.image.url), choose_winner_user_path(@user1, other_id: @user2), method: :patch, class: "imagen_index"%></div>
-      <div class = "imagen_index"><%= link_to image_tag(@user2.image.url), choose_winner_user_path(@user2, other_id: @user1), method: :patch, class: "imagen_index"%></div>
+    <div class="col-md-6 text-center ">
+      <%= link_to image_tag(@user1.image.url, class: "card-img-top mb-5 mb-md-0", style: "height: 438px; width: 313px; margin-right: 10px;"), choose_winner_user_path(@user1, other_id: @user2), method: :patch %>
+    </div>
 
-    <% else %>
-      <p>No hay usuario disponibles en este momento.</p>
-    <% end %>
+    <div class="col-md-6 text-center">
+      <%= link_to image_tag(@user2.image.url, class: "card-img-top mb-5 mb-md-0", style: "height: 438px; width: 313px; margin-left: 10px;"), choose_winner_user_path(@user2, other_id: @user1), method: :patch %>
+    </div>
+
+  <% else %>
+    <p>There are no available users at the moment.</p>
+  <% end %>
+
+<% else%>
+  <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">How is Better?</h1>
+    <div class="col-lg- mx-auto">
+      <p class="lead mb-4"> It is a website where you can compete with other profile pictures and determine which one is better. It is an educational and simple program that utilizes the Elo rating system to conduct research that appeals to individuals</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+          <%= link_to "Log in", new_user_session_path, class: "text-white" %>
+        </button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+          <%= link_to "Sign in", new_user_registration_path, style: "color: black;" %>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
+
+
 
 
 

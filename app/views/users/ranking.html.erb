@@ -1,7 +1,7 @@
+<h2>Score User:</h2>
 
 <div class="col-md-3 "%>
-    <h2>Puntajes de los Usuarios:</h2>
-    <% @users.each do |user| %>
-      <p><%= user.username %>: <%= user.elo_ranking %></p>
+    <% @users.each_with_index do |user, index| %>
+      <h4><%= index + 1 %>. <%= user.username %>: <%= user.elo_ranking %></h4>
     <% end %>
 </div>

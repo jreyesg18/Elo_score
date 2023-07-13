@@ -12,5 +12,8 @@ class User < ApplicationRecord
   def self.random_pair
     all.sample(2)
   end
+  def full_name
+    "#{name}"  " #{lastname}"
+  end
 
 end
