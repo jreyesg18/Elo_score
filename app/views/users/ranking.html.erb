@@ -1,7 +1,11 @@
-<h2>Score User:</h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="new-book-form">
 
-<div class="col-md-3 "%>
-    <% @users.each_with_index do |user, index| %>
-      <h4><%= index + 1 %>. <%= user.username %>: <%= user.elo_ranking %></h4>
-    <% end %>
+    <h2><strong>Score User:</strong></h2><br>
+
+        <% @users.each_with_index do |user, index| %>
+          <h4><strong><%= index + 1 %>.     <%= user.username %>: <%= user.elo_ranking %></strong> </h4>
+        <% end %>
+
+  </div>
 </div>

@@ -1,22 +1,26 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="text-center">
+      <h1><strong><%=@user.username%></strong></h1>
+    </div><br>
 
-<div class="container">
-  <div class="row">
-    <% if @user.image_url %>
-      <div class="col-4">
-        <%= image_tag @user.image_url, width: "200px", class: "profile-pic" %>
-      </div>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <% if @user.image_url %>
+            <%= image_tag @user.image_url, class: "book-show" %>
+          <% end %>
+        </div>
 
-    <div class="col-md-8">
-      <div class="col-8 text-left">
-        <h2><strong><%=@user.username%></strong></h2>
-        <h3><strong>Position: <%= @user_position %></strong></h3>
-        <h5><strong><%= @user.full_name %></strong></h5>
-        <h5><strong>Score: <%= @user.elo_ranking %></strong></h5>
-        <h5><strong>Email: </strong><%= @user.email_com%>
+        <div class="col-md-6">
+          <h1><strong>Position: <%= @user_position %></strong></h1>
+          <h3><strong>Name: <%= @user.full_name %></strong></h3>
+          <h3><strong>Score: <%= @user.elo_ranking %></strong></h3>
+          <h3><strong>Email: </strong><%= @user.email_com%></h3>
+
           <br><br>
-        <%= link_to 'Edit User', edit_registration_path(@user), class: 'btn btn-success' %>
-        <%= link_to "Back", root_path, class: 'btn btn-success'%></div>
-    </div>
+          <%= link_to 'Edit User', edit_registration_path(@user), class: 'btn btn-success' %>
+          <%= link_to "Back", root_path, class: 'btn btn-success'%>
+        </div>
+      </div>
   </div>
 </div>

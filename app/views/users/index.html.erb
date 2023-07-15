@@ -2,27 +2,33 @@
 <% if user_signed_in? %>
 
   <% if @user1 && @user2 %>
+
     <div class="text-center">
-      <h2>How is better?</h2>
+      <h2>Which do you like?</h2>
+    </div><br>
+
+    <div class="col-md-8 text-center ">
+      <%= link_to image_tag(@user1.image.url, class: "book-show", style: "height: 504px; width: 359px; margin-right: 10px;"), choose_winner_user_path(@user1, other_id: @user2), method: :patch %>
     </div>
 
-    <div class="col-md-6 text-center ">
-      <%= link_to image_tag(@user1.image.url, class: "card-img-top mb-5 mb-md-0", style: "height: 438px; width: 313px; margin-right: 10px;"), choose_winner_user_path(@user1, other_id: @user2), method: :patch %>
+    <div class="col-md-3 text-center">
+      <%= link_to image_tag(@user2.image.url, class: "book-show", style: "height: 504px; width: 359px; margin-left: -300px;"), choose_winner_user_path(@user2, other_id: @user1), method: :patch %>
     </div>
 
-    <div class="col-md-6 text-center">
-      <%= link_to image_tag(@user2.image.url, class: "card-img-top mb-5 mb-md-0", style: "height: 438px; width: 313px; margin-left: 10px;"), choose_winner_user_path(@user2, other_id: @user1), method: :patch %>
     </div>
-
   <% else %>
     <p>There are no available users at the moment.</p>
   <% end %>
 
 <% else%>
+
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">How is Better?</h1>
     <div class="col-lg- mx-auto">
-      <p class="lead mb-4"> It is a website where you can compete with other profile pictures and determine which one is better. It is an educational and simple program that utilizes the Elo rating system to conduct research that appeals to individuals</p>
+      <p class="lead mb-4"> Es un sitio como ejemplo simple donde se visualiza el sistema de puntaje de Elo. Este sistema se puede realizar para diversas tareas cotidianas. Desde revisar los conceptos mas importantes para una persona, orientación del consumidor en servicios que necesita, clasificación de moda, gustos por edades, etc.
+      </p>
+      <p class="lead mb-4"> En este caso. Es comparar dos fotografias y elegir el que gustas.
+      </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
           <%= link_to "Log in", new_user_session_path, class: "text-white" %>
@@ -33,8 +39,6 @@
       </div>
     </div>
   </div>
-
-
 <% end %>
 
 

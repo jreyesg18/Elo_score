@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :update, :new, :show, :ranking, :create] do
     patch 'choose_winner', on: :member
     get 'ranking', on: :collection
+    get 'about', on: :collection
   end
 
   root 'users#index'
